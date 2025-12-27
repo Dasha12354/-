@@ -1,0 +1,114 @@
+body {
+    margin: 0; padding: 0;
+    font-family: 'Comfortaa', cursive;
+    background: linear-gradient(to bottom, #0f1e3a, #1a3c5e);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.snowfall {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.title {
+    font-family: 'Festive', cursive;
+    font-size: 4rem;
+    color: #ffcc00;
+    text-shadow: 0 0 20px #ff6600;
+    margin: 40px 0 10px;
+}
+
+.subtitle {
+    font-size: 1.6rem;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.counter {
+    font-size: 1.8rem;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 320px;
+    border: 2px solid #ff6600;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px auto;
+    cursor: pointer;
+    border: 2px solid #ffcc00;
+    transition: all 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ff6600;
+}
+
+.love-btn {
+    background: linear-gradient(45deg, #ff6600, #ffcc00);
+    color: #000;
+    border: none;
+    padding: 20px 50px;
+    font-size: 1.8rem;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 40px auto;
+    box-shadow: 0 10px 30px #ff660066;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: rgba(26,60,94,0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 30px;
+    max-width: 90%;
+    position: relative;
+    border: 2px solid #ffcc00;
+    color: #fff;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 3rem;
+    cursor: pointer;
+    color: #ffcc00;
+}
+
+.photo-with-caption img {
+    max-width: 100%;
+    border-radius: 15px;
+    margin: 15px 0;
+    border: 3px solid #ff6600;
+}

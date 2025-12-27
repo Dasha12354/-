@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сладкий , это твой новогодний сюрприз! 🎄</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Festive&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="snowfall"></div>
+
+<div class="container">
+    <h1 class="title festive">Моему любимому мальчику 🎅♡</h1>
+    <p class="subtitle">От твоей девочки 🤍 </p>
+
+    <div class="counter" id="daysTogether">Мы вместе уже <span id="days">0</span> дней ♡</div>
+
+
+    <div class="cards">
+        <div class="card" onclick="openModal(1)">
+            <p>Первое послание ❄️</p>
+        </div>
+        <div class="card" onclick="openModal(2)">
+            <p>Наши фото под снегом 🥰</p>
+        </div>
+        <div class="card" onclick="openModal(3)">
+            <p>Почему я тебя люблю 🤍</p>
+        </div>
+        <div class="card" onclick="openModal(4)">
+            <p>Наша зимняя песня ♪</p>
+        </div>
+    </div>
+
+    <button class="love-btn festive" onclick="shootSnowConfetti()">Я тебя очень люблю ❤️ С новым годом 🥳 🎁</button>
+</div>
+
+<!-- Модальные окна (оставил как было, можешь менять текст) -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">×</span>
+        <h2>Первое, что я хочу сказать…</h2>
+        <p>Ты — мой самый тёплый подарок в этом году. С тобой даже зима кажется летом ♡</p>
+    </div>
+</div>
+
+<div id="modal2" class="modal">
+    <div class="modal-content gallery">
+        <span class="close" onclick="closeModal()">×</span>
+        <h2>Наши милые моменты 🥰 ❄️</h2>
+        <div class="photo-with-caption">
+            <img src="photo_1.jpg" alt="мы">
+            <p>Помнишь этот момент? Я до сих пор улыбаюсь ♡</p>
+        </div>
+        <div class="photo-with-caption">
+            <img src="photo_2.jpg" alt="мы">
+            <p>😊😊😊</p>
+        </div>
+        <div class="photo-with-caption">
+            <img src="photo_3.jpg" alt="мы">
+            <p>Когда мы самые счастливые 🥰</p>
+        </div>
+        <div class="photo-with-caption">
+            <img src="photo_4.jpg" alt="мы">
+            <p>Мы тут прям как с обложки )</p>
+        </div>
+        <div class="photo-with-caption">
+            <img src="photo_5.jpg" alt="мы">
+            <p>Обожаю эту фотку ♡</p>
+        </div>
+    </div>
+</div>
+
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">×</span>
+        <h2>Почему я тебя так сильно люблю</h2>
+        <ul class="love-list">
+            <li>За твою улыбку, от которой таю</li>
+            <li>За то, как ты обнимаешь меня во сне</li>
+            <li>За то, что ты всегда рядом</li>
+            <li>Просто потому что ты — это ТЫ ♡</li>
+        </ul>
+    </div>
+</div>
+
+<div id="modal4" class="modal">
+    <div class="modal-content song-modal">
+        <span class="close" onclick="closeModal()">×</span>
+        <h2>Наша зимняя песня 🎶</h2>
+        <audio id="loveSong" src="song.mp3" controls></audio>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
