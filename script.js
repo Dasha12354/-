@@ -35,3 +35,7 @@ function openModal(id) {
 function closeModal() {
     document.querySelectorAll(".modal").forEach(m => m.style.display = "none");
 }
+function openSecret() {
+    alert("Ты — самое лучшее, что случилось со мной 🤍");
+    shootSnowConfetti();
+}
