@@ -1,43 +1,37 @@
-// Счётчик дней вместе (ИЗМЕНИ ДАТУ НА ВАШУ!)
-const startDate = new Date("2025-10-10"); // ←←←←←← ИЗМЕНИ НА ДАТУ НАЧАЛА ОТНОШЕНИЙ!
+const startDate = new Date("2025-10-10");
 
 function updateDaysTogether() {
     const days = Math.floor((Date.now() - startDate) / 86400000);
     document.getElementById("days").textContent = days;
 }
 updateDaysTogether();
-setInterval(updateDaysTogether, 3600000);
 
-// Падающий снег
+// Снег
 function createSnowflake() {
     const snow = document.createElement("div");
-    snow.className = "snowflake";
-    snow.innerHTML = ["❄️", "❅", "❆"][Math.floor(Math.random()*3)];
+    snow.innerText = "❄️";
+    snow.style.position = "fixed";
     snow.style.left = Math.random() * 100 + "vw";
-    snow.style.animationDuration = (5 + Math.random() * 10) + "s";
-    snow.style.opacity = Math.random() * 0.6 + 0.4;
-    snow.style.fontSize = (10 + Math.random() * 20) + "px";
-    document.querySelector(".snow-container").appendChild(snow);
-    setTimeout(() => snow.remove(), 15000);
-}
-setInterval(createSnowflake, 200);
+    snow.style.top = "-10px";
+    snow.style.fontSize = Math.random() * 20 + 10 + "px";
+    snow.style.opacity = Math.random();
+    snow.style.animation = "fall linear 10s";
+    document.body.appendChild(snow);
 
-// Снежное конфетти
+    setTimeout(() => snow.remove(), 10000);
+}
+setInterval(createSnowflake, 300);
+
+// Конфетти
 function shootSnowConfetti() {
-    confetti({
-        particleCount: 200,
-        spread: 120,
-        origin: { y: 0.6 },
-        colors: ['#ffffff', '#e0e0e0', '#ffd700'],
-        shapes: ['circle'],
-        ticks: 400
-    });
+    confetti({ particleCount: 150, spread: 120 });
 }
 
 // Модалки
-function openModal(num) {
-    document.getElementById("modal" + num).style.display = "flex";
+function openModal(id) {
+    document.getElementById("modal" + id).style.display = "flex";
 }
+
 function closeModal() {
     document.querySelectorAll(".modal").forEach(m => m.style.display = "none");
 }
