@@ -2,83 +2,101 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Новогодний сюрприз 🎄</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="snow-container"></div>
+<div id="background"></div>
 
 <div class="container">
     <h1>С Новым годом ♡</h1>
-    <p class="subtitle">От твоей девочки, которая очень тебя любит</p>
+    <p class="subtitle">От твоей девочки, которая тебя очень любит</p>
 
     <div class="days-counter">
         Мы вместе уже <span id="days">0</span> дней ❄️
     </div>
 
     <div class="cards">
-        <div class="card" onclick="openModal(1)">💌 Первое послание</div>
-        <div class="card" onclick="openModal(2)">📸 Наши фото</div>
-        <div class="card" onclick="openModal(3)">❤️ Почему я тебя люблю</div>
-        <div class="card" onclick="openModal(4)">🎶 Наша песня</div>
+
+        <!-- ПИСЬМО -->
+        <div class="card" onclick="openModal(1)">
+            💌 Моё письмо
+        </div>
+
+        <!-- ФОТО СРАЗУ В ПЛАШКЕ -->
+        <div class="card photos-card">
+            <h3>📸 Наши фото</h3>
+
+            <div class="photo-grid small">
+                <div class="polaroid" style="--rotate:-6deg">
+                    <img src="photo_1.jpg">
+                     <p>Люблю тебя целовать 💋</p>
+                </div>
+
+                <div class="polaroid" style="--rotate:4deg">
+                    <img src="photo_2.jpg">
+                    <p>И издеваться когда ты спишь 🤭</p>
+                </div>
+
+                <div class="polaroid" style="--rotate:-3deg">
+                    <img src="photo_3.jpg">
+                    <p>Благодарна за каждую минутку рядом 🤍</p>
+                </div>
+
+                <div class="polaroid" style="--rotate:5deg">
+                    <img src="photo_4.jpg">
+                    <p>Помню, как улыбалась, увидев себя на обоях 🥰</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- СПИСОК -->
+        <div class="card" onclick="openModal(3)">
+            ❤️ Почему я тебя люблю
+        </div>
+
+        <!-- МУЗЫКА -->
+        <div class="card" onclick="openModal(4)">
+            🎶 Наша песня
+        </div>
+
     </div>
 
-    <button class="love-btn" onclick="shootSnowConfetti()">
+    <button class="love-btn" onclick="shootConfetti()">
         Я тебя очень люблю 🤍
     </button>
 </div>
-<div class="secret" onclick="openSecret()">
-    ❄️
-</div>
 
-<!-- Модалки -->
+<!-- МОДАЛКА ПИСЬМО -->
 <div id="modal1" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">×</span>
-        <h2>Моё послание</h2>
-        <p>Ты — мой самый тёплый подарок в этом году. Даже зима с тобой становится уютной 🤍</p>
+        <h2>Моё послание для тебя ♡</h2>
+        <p id="Желаю тебе в этом году добиться всех своих поставленных целей. Желаю тебе решить все свои дела и не сталкиваться с трудностями. Чтобы была идиллия в отношениях, в семье и в дружбе .
+Знай, что я всегда рядом, ты можешь на меня положиться в решении любой трудной ситуации. Ты можешь на меня опереться, если не справляешься сам, я тебя не осужу за это. 
+Ты моя половинка и мой подарок , спасибо , что появился и сделал конец этого года для меня ярче ❤️"></p>
     </div>
 </div>
 
-<div class="photo-grid">
-    <div class="polaroid" style="--rotate:-6deg">
-        <img src="photo_1.jpg" alt="">
-        <p>Люблю этот момент 🤍</p>
-    </div>
-
-    <div class="polaroid" style="--rotate:4deg">
-        <img src="photo_2.jpg" alt="">
-        <p>Мы тут такие настоящие</p>
-    </div>
-
-    <div class="polaroid" style="--rotate:-3deg">
-        <img src="photo_3.jpg" alt="">
-        <p>С тобой всегда тепло</p>
-    </div>
-
-    <div class="polaroid" style="--rotate:5deg">
-        <img src="photo_4.jpg" alt="">
-        <p>Моё любимое фото 🤍</p>
-    </div>
-</div>
-
-
-
+<!-- МОДАЛКА СПИСОК -->
 <div id="modal3" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">×</span>
-        <ul>
-            <li>Ты делаешь меня счастливой</li>
-            <li>Ты мой дом</li>
-            <li>Ты мой выбор каждый день</li>
+        <ul class="love-list">
+            <li>С тобой мои вечера становятся веселее </li>
+            <li>Ты мой уют </li>
+            <li>Ты причина, по которой я первым делом захожу утром в телефон </li>
+            <li>Ты человек, чьему звонку я буду рада даже когда мне плохо</li>
+            <li>С тобой любая глупая ситуация становится забавной и запоминающейся</li>
         </ul>
     </div>
 </div>
 
+<!-- МОДАЛКА МУЗЫКА -->
 <div id="modal4" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">×</span>
@@ -88,7 +106,5 @@
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script src="script.js"></script>
-
 </body>
 </html>
-
