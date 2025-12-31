@@ -2,19 +2,18 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Новогодний сюрприз 🎄</title>
+    <title>С Новым годом ♡</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Courier+Prime&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- ФОН -->
 <div id="background"></div>
 
 <div class="container">
-    <h1>С Новым годом ♡</h1>
+    <h1 class="glow">С Новым годом ♡</h1>
     <p class="subtitle">От твоей девочки, которая тебя очень любит</p>
 
     <div class="days-counter">
@@ -22,83 +21,74 @@
     </div>
 
     <div class="cards">
-
-        <!-- ПИСЬМО -->
-        <div class="card" onclick="openModal(1)">
-            💌 Моё послание для тебя
-        </div>
-
-        <!-- ФОТО В ПЛАШКЕ -->
-        <div class="card photos-card">
-            <h3>📸 Наши фото</h3>
-
-            <div class="photos-grid">
-                <div class="polaroid">
-                    <img src="photo_1.jpg">
-                    <p>Люблю тебя целовать 💋</p>
-                </div>
-
-                <div class="polaroid">
-                    <img src="photo_2.jpg">
-                    <p>Когда ты спишь 🤭</p>
-                </div>
-
-                <div class="polaroid">
-                    <img src="photo_3.jpg">
-                    <p>Счастье рядом 🤍</p>
-                </div>
-
-                <div class="polaroid">
-                    <img src="photo_4.jpg">
-                    <p>Моё любимое фото 🥰</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- СПИСОК -->
-        <div class="card" onclick="openModal(3)">
-            ❤️ Почему я тебя люблю
-        </div>
-
-        <!-- МУЗЫКА -->
-        <div class="card" onclick="openModal(4)">
-            🎶 Наша песня
-        </div>
+        <div class="card" onclick="openModal(1)">💌 Моё послание</div>
+        <div class="card" onclick="openModal(2)">📸 Наши фото</div>
+        <div class="card" onclick="openModal(3)">❤️ Почему я тебя люблю</div>
+        <div class="card" onclick="openModal(4)">🎶 Наша песня</div>
     </div>
 
-    <button class="love-btn" onclick="shootConfetti()">
-        Я тебя очень люблю 🤍
-    </button>
+    <button class="love-btn" onclick="shootConfetti()">Я тебя очень люблю 🤍</button>
 </div>
 
-<!-- МОДАЛКА ПИСЬМО -->
+<!-- ПИСЬМО -->
 <div id="modal1" class="modal">
-    <div class="modal-content">
+    <div class="modal-content letter">
         <span class="close" onclick="closeModal()">×</span>
+        <h2>Моё послание тебе</h2>
         <p>
-            Желаю тебе в этом году добиться всех целей.
-            Знай, что я всегда рядом и очень тебя люблю ❤️
+            Желаю тебе в этом году добиться всех целей.  
+            Пусть рядом всегда будут тепло, спокойствие и любовь.  
+            Я всегда рядом. Ты — мой самый ценный подарок ❤️
         </p>
     </div>
 </div>
 
-<!-- МОДАЛКА СПИСОК -->
+<!-- ФОТО -->
+<div id="modal2" class="modal">
+    <div class="modal-content gallery">
+        <span class="close" onclick="closeModal()">×</span>
+        <h2>Наши фото 🤍</h2>
+
+        <div class="polaroid">
+            <img src="photo_1.jpg">
+            <p>Люблю тебя целовать 💋</p>
+        </div>
+
+        <div class="polaroid">
+            <img src="photo_2.jpg">
+            <p>Когда ты спишь 🥺</p>
+        </div>
+
+        <div class="polaroid">
+            <img src="photo_3.jpg">
+            <p>Счастье рядом 🤍</p>
+        </div>
+
+        <div class="polaroid">
+            <img src="photo_4.jpg">
+            <p>Моё любимое фото 🥰</p>
+        </div>
+    </div>
+</div>
+
+<!-- СПИСОК -->
 <div id="modal3" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">×</span>
         <ul class="love-list">
             <li>Ты мой уют</li>
-            <li>Ты моё спокойствие</li>
-            <li>Ты мой любимый человек</li>
+            <li>С тобой всегда спокойно</li>
+            <li>Ты мой дом</li>
+            <li>Я улыбаюсь из-за тебя</li>
         </ul>
     </div>
 </div>
 
-<!-- МОДАЛКА МУЗЫКА -->
+<!-- МУЗЫКА -->
 <div id="modal4" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">×</span>
-        <audio src="Macan - Останься Образом.mp3" controls></audio>
+        <audio src="song.mp3" controls></audio>
     </div>
 </div>
 
