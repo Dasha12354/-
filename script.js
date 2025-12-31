@@ -1,23 +1,25 @@
-// дни вместе
+// ДНИ ВМЕСТЕ
 const startDate = new Date("2025-10-10");
-const now = new Date();
-const days = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
-document.getElementById("days").textContent = days;
 
-// модалки
-function openModal(id) {
-    document.getElementById("modal" + id).style.display = "flex";
+function updateDays() {
+    const days = Math.floor((Date.now() - startDate) / 86400000);
+    document.getElementById("days").textContent = days;
 }
+updateDays();
 
+// МОДАЛКИ
+function openModal(n) {
+    document.getElementById("modal" + n).style.display = "flex";
+}
 function closeModal() {
     document.querySelectorAll(".modal").forEach(m => m.style.display = "none");
 }
 
-// конфетти
+// КОНФЕТТИ
 function shootConfetti() {
     confetti({
-        particleCount: 200,
-        spread: 90,
-        origin: { y: 0.6 }
+        particleCount: 150,
+        spread: 100,
+        colors: ['#ffffff', '#ffd700', '#c1121f', '#2a9d8f']
     });
 }
